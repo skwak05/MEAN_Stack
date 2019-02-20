@@ -1,7 +1,7 @@
 <% include ../partials/header.ejs %>
 
 <main class="container">
-    <% if(message.length > 0) { %>
+    <% if(messages.length > 0) { %>
         <div class="alert alert-danger">
             <%= messages %>
         </div>
@@ -9,16 +9,18 @@
     <div class="row">
         <div class="col-md-offset-4 col-md-4">
             <h1>Please Login</h1>
-            <form method="POST">
+            <form method="POST" autocomplete="off">
                 <fieldset class="from-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" 
-                    name="username" placeholder="Enter Username" id="username" required autofocus>
+                    name="username" placeholder="Enter Username" id="username" 
+                    required autofocus autocomplete="off">
                 </fieldset>
                 <fieldset class="from-group">
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" 
-                    name="password" placeholder="Enter Password" id="password" required>
+                    name="password" placeholder="Enter Password" id="password" 
+                    required autocomplete="off">
                     or
                     <a href="/register">Register Here</a>
                 </fieldset>
