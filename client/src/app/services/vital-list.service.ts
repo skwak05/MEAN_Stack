@@ -12,9 +12,11 @@ export class VitalListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'http://localhost:3000/api/vitalSign-list-Nurse/';
+  //private endpoint = 'http://localhost:3000/api/vitalSign-list-Nurse/';
+  private endpoint = 'https://comp308-fianlproject.herokuapp.com/api/vitalSign-list-Nurse/';
 
-  private endpoint_dailyTip = 'http://localhost:3000/api/dailyTip/';
+  //private endpoint_dailyTip = 'http://localhost:3000/api/dailyTip/';
+  private endpoint_dailyTip = 'https://comp308-fianlproject.herokuapp.com/api/dailyTip/';
 
   private httpOptions = {
     headers: new HttpHeaders({
