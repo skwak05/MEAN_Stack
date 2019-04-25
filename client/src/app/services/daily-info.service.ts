@@ -13,7 +13,7 @@ export class DailyInfoService {
   private authToken: any = null;
 
   //private endpoint = 'http://localhost:3000/api/dailyInfo/';
-  private endpoint = 'https://comp308-fianlproject.herokuapp.com/api/dailyInfo/';
+  private endpoint = 'https://soo-project-angular.herokuapp.com/api/dailyInfo/';
 
   private httpOptions = {
     headers: new HttpHeaders({

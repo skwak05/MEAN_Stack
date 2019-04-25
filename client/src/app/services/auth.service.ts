@@ -14,7 +14,7 @@ export class AuthService {
 
   patientID: string;
 
-  private endpoint = "https://comp308-fianlproject.herokuapp.com/api/"
+  private endpoint = "https://soo-project-angular.herokuapp.com/api/"
   //private endpoint = "http://localhost:3000/api/";
 
   private httpOptions = {

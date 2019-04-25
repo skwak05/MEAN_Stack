@@ -13,9 +13,9 @@ export class AlertService {
   private authToken: any = null;
 
   //private endpoint = 'http://localhost:3000/api/alert/';
-  private endpoint = 'https://comp308-fianlproject.herokuapp.com/api/alert';
+  private endpoint = 'https://soo-project-angular.herokuapp.com/api/alert';
 
-  private endpoint_see = 'https://comp308-fianlproject.herokuapp.com/api/seeAlerts/';
+  private endpoint_see = 'https://soo-project-angular.herokuapp.com/api/seeAlerts/';
   //private endpoint_see = 'http://localhost:3000/api/seeAlerts/'
 
   private httpOptions = {
