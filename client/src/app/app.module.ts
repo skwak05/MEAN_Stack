@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FilterPipeModule } from 'ngx-filter-pipe';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -70,8 +68,6 @@ export function jwtTokenGetter() {
     ReactiveFormsModule,
     HttpClientModule,
     FlashMessagesModule,
-    FilterPipeModule,
-    MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
