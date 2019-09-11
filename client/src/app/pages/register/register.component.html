@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
       <h1>Please Register</h1>
-      <form autocomplete="off" (ngSubmit)="onRegisterSubmit()">
+      <form #userForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit(userForm)">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="username">Username</label>
@@ -15,7 +15,12 @@
               id="username"
               required
               autocomplete="off"
+              #userName = "ngModel"
+              minlength="2"
+              [ngClass]="{'is-invalid': userName.errors && userName.touched}"
             />
+            <div [hidden]="!userName.errors?.required" class="invalid-feedback">User name required</div>
+            <div [hidden]="!userName.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
           </div>
 
           <div class="form-group col-md-6">
@@ -29,7 +34,12 @@
               id="password"
               required
               autocomplete="off"
+              #password = "ngModel"
+              minlength="2"
+              [ngClass]="{'is-invalid': password.errors && password.touched}"
             />
+            <div [hidden]="!password.errors?.required" class="invalid-feedback">Password required</div>
+            <div [hidden]="!password.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
           </div>
         </div>
 
@@ -44,7 +54,12 @@
             id="userID"
             required
             autocomplete="off"
+            #userID = "ngModel"
+            minlength="2"
+            [ngClass]="{'is-invalid': userID.errors && userID.touched}"
           />
+          <div [hidden]="!userID.errors?.required" class="invalid-feedback">User ID required</div>
+          <div [hidden]="!userID.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
         </div>
 
         <div class="form-row">
@@ -59,7 +74,12 @@
               id="firstName"
               required
               autocomplete="off"
+              #firstName = "ngModel"
+              minlength="2"
+              [ngClass]="{'is-invalid': firstName.errors && firstName.touched}"
             />
+            <div [hidden]="!firstName.errors?.required" class="invalid-feedback">First Name required</div>
+            <div [hidden]="!firstName.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
           </div>
 
           <div class="form-group col-md-6">
@@ -73,7 +93,12 @@
               id="lastName"
               required
               autocomplete="off"
+              #lastName = "ngModel"
+              minlength="2"
+              [ngClass]="{'is-invalid': lastName.errors && lastName.touched}"
             />
+            <div [hidden]="!lastName.errors?.required" class="invalid-feedback">Last Name required</div>
+            <div [hidden]="!lastName.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
           </div>
         </div>
 
@@ -87,7 +112,12 @@
             placeholder="Enter Email"
             id="email"
             autocomplete="off"
+            #email = "ngModel"
+            minlength="5"
+            [ngClass]="{'is-invalid': email.errors && email.touched}"
           />
+          <div [hidden]="!email.errors?.required" class="invalid-feedback">Email required</div>
+          <div [hidden]="!email.errors?.minlength" class="invalid-feedback">Must be at least 2 characters</div>
         </div>
 
         <div class="form-group">

@@ -1,12 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { AuthService } from "src/app/services/auth.service";
 import { Router } from "@angular/router";
+
 import { User } from "src/app/models/user";
-
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-
-import { ReactiveFormsModule } from "@angular/forms";
 
 @Component({
   selector: "app-register",
@@ -18,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
   categories: string[] = ["Nurse", "Patient"];
 
+  @ViewChild('userForm') form: any;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -26,6 +25,17 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.user = new User();
+  }
+
+  onSubmit({value, valid}: {value: User, valid: boolean})
+  {
+    if(!valid){
+      console.log('Form is not valid!');
+    }
+    else{
+      console.log('Form was submitted!');
+      this.form.reset();
+    }
   }
 
   onRegisterSubmit(): void {
